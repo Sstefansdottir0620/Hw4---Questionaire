@@ -1,0 +1,63 @@
+h1 {
+font-weight: bold;
+font-size: 60px;
+text-align: center;
+margin-top: 40px;
+margin-bottom: 40px;
+}
+
+h2 {
+font-size: 20px;
+text-align: center;
+}
+
+.button {
+    background-color: black;
+    color: cornsilk;
+    font-size: 20px;
+    width: 300px;
+    border-radius: 25px;
+    padding: 10px;
+
+}
+.startBtn{
+    background-color:#0099cc;
+    border-radius: 25px;
+    padding: 5px;
+    width: 250px;
+    margin: auto;
+    color: whitesmoke;
+    font-size: 30pt;
+    font-weight: bolder;
+    text-align: center;
+}
+
+li{
+    list-style: none;
+    height: 50px;
+    margin: auto;
+}
+
+.TimerClass{
+    background-color: orangered;
+    border-radius: 25px;
+    padding: 5px;
+    width: 250px;
+    margin: auto;
+    color: whitesmoke;
+    font-size: 30pt;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.resultClass {
+    background-color:#0099cc;
+    border-radius: 25px;
+    padding: 5px;
+    width: 200px;
+    margin: auto;
+    color: whitesmoke;
+    font-size: 40pt;
+    font-weight: bolder;
+    text-align: center;
+}
