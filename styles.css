@@ -7,14 +7,18 @@ margin-bottom: 40px;
 }
 
 h2 {
-font-size: 20px;
+font-size: 40px;
 text-align: center;
+}
+
+.button:hover{
+    background-color: peru;
 }
 
 .button {
     background-color: black;
     color: cornsilk;
-    font-size: 20px;
+    font-size: 30px;
     width: 300px;
     border-radius: 25px;
     padding: 10px;
@@ -50,14 +54,45 @@ li{
     text-align: center;
 }
 
-.resultClass {
-    background-color:#0099cc;
+.resultContainer {
+    background-color:pink;
+    color: white;
     border-radius: 25px;
     padding: 5px;
-    width: 200px;
-    margin: auto;
-    color: whitesmoke;
-    font-size: 40pt;
+    width: 250px;
+    font-size: 30pt;
     font-weight: bolder;
+    text-align: center;
+    margin: auto;
+}
+
+.totalScore {
+    background-color:pink;
+    color: white;
+    border-radius: 25px;
+    padding: 5px;
+    width: 250px;
+    font-size: 30pt;
+    font-weight: bolder;
+    text-align: center;
+    margin: auto;
+
+}
+.container{
+    margin: auto;
+    width: 1000px;
+    height:400px;
+    background-color: powderblue;
+    margin-top: 25px;
+    padding: 20px;
+}
+
+#FloatLeft{
+    float: left;
+}
+
+section{
+    font-size: 20pt;
+    font-weight: bold;
     text-align: center;
 }
