@@ -9,12 +9,14 @@ var submitButtonB = document.getElementById("choiceB");
 var submitButtonC = document.getElementById("choiceC");
 var submitButtonD = document.getElementById("choiceD");
 var startBtn = document.getElementById("startBtn");
-var myinitialInput = document.getElementById("myInitialInput")
-var submitBtn = document.getElementById("submitBtn")
+var myinitialInput = document.getElementById("myInitialInput");
+var submitBtn = document.getElementById("submitBtn");
+var counter = document.querySelector("#counter");
 var highScoreArr = [];
 var totalScoreContainer = document.getElementById("totalScoreContainer");
 var totalScore = [];
 var questions ="";
+var finishedQuiz = false;
 
 
 
@@ -66,22 +68,23 @@ var questionsAnswers = [
 
 ]
 
-//set a timer
-// var timer=100;
-// var intervalId = setInterval(function(){
-//     timer --;
-//     if (timer === 0) {
-//         clearInterval(intervalId)
-        
-//     }
-
-
-// },1000);
 
 
 //Set a function for the startBtn to start the quiz and display the currentQuestion and choices of answers.
 
 startBtn.addEventListener("click", function() {
+    var timer=60;
+    counter.style.visibility = "visible"
+    counter.textContent = timer
+    var intervalId = setInterval(function(){
+    timer--;
+    counter.textContent = timer
+
+    if (timer === 0  || finishedQuiz) {
+        clearInterval(intervalId) 
+    }
+},1000);
+
 displayQuestionstoPage(); 
 
 })
@@ -133,6 +136,7 @@ function evaluateAnswer(e) {
     } else {
         totalScoreContainer.textContent = totalScore;
         totalScoreContainer.style.visibility = "visible";
+        finishedQuiz = true;
     }
 
     
@@ -153,10 +157,12 @@ submitBtn.addEventListener("click", function() {
     localStorage.setItem("highScore", randomthing);
 })
 
-JSON.parse(localStorage.getItem("highScore")).forEach(item => {
-    var highScore = $(`<p>User: ${item.name} - Score: ${item.score}<p>`);
-    $("#outPut").append(highScore)
-})
+if (localStorage.getItem("highScore")) {
+    JSON.parse(localStorage.getItem("highScore")).forEach(item => {
+        var highScore = $(`<p>User: ${item.name} - Score: ${item.score}<p>`);
+        $("#outPut").append(highScore)
+    })
+}
   
 
 submitButtonA.addEventListener("click", evaluateAnswer)
@@ -168,4 +174,6 @@ submitButtonD.addEventListener("click", evaluateAnswer)
 resultContainer.style.visibility = "hidden"
 
 totalScoreContainer.style.visibility = "hidden"
+
+counter.style.visibility = "hidden"
 
